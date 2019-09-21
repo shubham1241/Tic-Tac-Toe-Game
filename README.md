@@ -13,7 +13,6 @@ def display_board(board):
             break
         else:
             print('---------------------------')
-    
         x+=3
 p1="X"
 p2="O"
@@ -28,10 +27,8 @@ def welcome(p1,p2):
         else:
             p2='X'
     return (p1.upper(),p2.upper())
-
 a=False
 def check(a,board,r):
-    
         if board[0]==board[1]==board[2]==r:
             a=True
         elif board[3]==board[4]==board[5]==r:
@@ -51,11 +48,6 @@ def check(a,board,r):
         else:
             a=False
         return (a,board,r)
-    
-   
-            
-
-            
 def insert_to_board(board,a):
     print(f'{a} symbol chance')
     x1=int(input("Enter the number to place your marker: 1-9 \n"))
@@ -66,16 +58,13 @@ def insert_to_board(board,a):
             pass
         else:
             board[x1-1]=a
-            
         return board
-
 import random
 def randomise():
     if random.randint(1,2)==1:
         return p1
     else:
         return p2    
-
 def check_full_board(board):
     if " " in board:
         return True
@@ -86,42 +75,28 @@ def noreplay():
     from IPython.display import clear_output
     clear_output()
     print("\n\nThank you for playing game----Author-Shubham singh\n\n")
-              
 x7=False
-
 def replay(board,x7):
         a12=input("Do you want to play game again ")
         if(a12.upper()=="YES"):
             board=[' ',' ',' ',' ',' ',' ',' ',' ',' ']
             x7=True
         return (board,x7)
-
-
-             
 print("Welcome to Tic-Tac-Toe")
 p1='X'
 p2='O'
-
 r=randomise()
 if r=="O":
     r1="X"
 else:
     r1="O"           
-              
-    
-    
-    
-    
-
 def game():
     board=[' ',' ',' ',' ',' ',' ',' ',' ',' ']
- 
     welcome(p1,p2)
     print(f'The player with this symbol {r} go first\n')
     x=input("Are you ready to play:- Reply Yes or No-> \n\n")
     if x.upper()=='YES':
             while check_full_board(board):
-                
                 print("\n\n\n\n\n\n")
                 display_board(board)
                 print("\n\n\n\n")
@@ -156,18 +131,10 @@ def game():
                         noreplay()
                         break
                     break
-                    
-                    
                 if check_full_board(board)=='The match has been tied':
                     replay()
-                
-                    
-                
-            
-                
     else:
         noreplay()
-        
 game()   
    
       
